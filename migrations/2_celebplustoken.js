@@ -2,10 +2,13 @@ const CelebPlusToken = artifacts.require("./CelebPlusToken.sol");
 const CelebPlusCrowdsale = artifacts.require("./CelebPlusCrowdsale.sol");
 const CelebPlusAirdrop = artifacts.require("./CelebPlusAirdrop.sol");
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const name = "Celeb Plus";
 const symbol = "CELEBPLUS";
 const decimals = 18;
-const initialSupply = 1075000000;
+const initialSupply = 1000000000;
 
 /************* CELEBPLUS Token deployed information ***************/
 
@@ -15,7 +18,7 @@ const CELEBPLUS_TOKEN_ADDRESS_MAINNET = '';
 
 // Rinkeby - Ethereum
 // @see https://ropsten.etherscan.io/token/0x
-const CELEBPLUS_TOKEN_ADDRESS_ROPSTEN = '';
+const CELEBPLUS_TOKEN_ADDRESS_ROPSTEN = '0x2720503fb77BcDeA88Ef4A0D535565720742C2E7';
 
 // Ropsten - Ethereum
 // @see https://rinkeby.etherscan.io/token/0x
@@ -38,27 +41,15 @@ const TokenContractDeployer = (deployer, network) => {
 /************* CELEBPLUS Crowdsale deployed information ***************/
 
 // TODO: Change this parameters in mainnet deployment
-// const rate = 
-// const totalSaleCap = 
-// const wallet = process.env.FUND_COLLECTOR_ADDRESS;
-
-// Mainnet - Ethereum
-// @see https://etherscan.io/0x
-// const CELEBPLUS_CROWDSALE_ADDRESS = '';
-
-// Rinkeby - Ethereum
-// @see https://ropsten.etherscan.io/0x
-// const CELEBPLUS_CROWDSALE_ADDRESS = '';
-
-// Ropsten - Ethereum
-// @see https://rinkeby.etherscan.io/0x
-// const CELEBPLUS_CROWDSALE_ADDRESS = '';
+const rate = 10000  // 1 ETH = 10,000.9375 token
+const totalSaleCap = 1000 * Math.pow(10, 18); // 1000.36463 ETH
+const wallet = process.env.FUND_COLLECTOR_ADDRESS;
 
 // Deployer
-// const SaleContractDeployer = (deployer, network) => {
-//   deployer.deploy(CelebPlusCrowdsale, rate, wallet, getTokenAddress(network), totalSaleCap)
-//     .then( _ => console.log(`CELEBPLUS Crowdsale contract has been deployed successfully on ${network}.`));
-// };
+const SaleContractDeployer = (deployer, network) => {
+  deployer.deploy(CelebPlusCrowdsale, rate, wallet, getTokenAddress(network), totalSaleCap)
+    .then( _ => console.log(`CELEBPLUS Crowdsale contract has been deployed successfully on ${network}.`));
+};
 
 function getTokenAddress(network) {
   switch (network) {
@@ -77,10 +68,10 @@ function getTokenAddress(network) {
 /************* CELEBPLUS Airdrop deployed information ***************/
 
 // Deployer
-// const AirdropContractDeployer = (deployer, network) => {
-//   deployer.deploy(CelebPlusAirdrop, getTokenAddress(network))
-//     .then( _ => console.log(`CELEBPLUS Airdrop contract has been deployed successfully on ${network}.`));
-// };
+const AirdropContractDeployer = (deployer, network) => {
+  deployer.deploy(CelebPlusAirdrop, getTokenAddress(network))
+    .then( _ => console.log(`CELEBPLUS Airdrop contract has been deployed successfully on ${network}.`));
+};
 
 
 
@@ -90,7 +81,7 @@ module.exports = (deployer, network) => {
   /**
    * Token contract deploy.
    */
-  TokenContractDeployer(deployer, network);
+  // TokenContractDeployer(deployer, network);
 
   /**
    * Sale contract deploy.
@@ -100,5 +91,5 @@ module.exports = (deployer, network) => {
   /**
    * Sale contract deploy.
    */
-  // AirdropContractDeployer(deployer, network);
+  AirdropContractDeployer(deployer, network);
 }

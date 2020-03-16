@@ -14,7 +14,7 @@ contract('CelebPlusCrowdsale', ([creator, wallet, funder, thirdParty, thirdParty
   const NAME = 'Celeb Plus';
   const SYMBOL = 'CELEBPLUS';
   const DECIMALS = 18;
-  const INITIAL_SUPPLY = new BigNumber(1250000000); // 1.25 Billion CELEBPLUS tokens
+  const INITIAL_SUPPLY = new BigNumber(1000000000); // 1.25 Billion CELEBPLUS tokens
 
   const EXCHANGE_RATE = new BigNumber(1000); // 1 ether = 1000 CELEBPLUS
   const TOTAL_SALE_CAP = ether(10);

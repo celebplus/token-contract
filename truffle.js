@@ -1,4 +1,6 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const providerFactory4Ethereum = network => new HDWalletProvider(
   process.env.MNEMONICS || '',                                  // Mnemonic of the deployer

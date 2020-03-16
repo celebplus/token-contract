@@ -7,11 +7,14 @@ Token smart contract for Celeb Plus platform
 2. If the project folder includes `build` folder, first delete it
 3. Compile the corresponding contract as follows;
 `truffle compile`
-4. Set mnemonic words for deployer in your command line as follows;
-`export MNEMONICS="<mnemonic_words>"`
-5. And set your infura project secret key as follows;
-`export INFURA_API_KEY="<infura_project_secret>"`
-6. Finally deploy the contract on the network you desire
+4. Make a '.env' file
+```
+  // Set mnemonic words for deployer
+  MNEMONICS=
+  // Set your infura project secret key
+  INFURA_API_KEY=
+```
+5. Finally deploy the contract on the network you desire
 `NETWORK=<network_name> npm run deploy`
 
 ## Test

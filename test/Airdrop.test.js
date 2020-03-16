@@ -11,7 +11,7 @@ require('chai')
 const NAME = 'Celeb Plus';
 const SYMBOL = 'CELEBPLUS';
 const DECIMALS = 18;
-const INITIAL_SUPPLY = 1250000000; // 1.25 Billion CELEBPLUS tokens
+const INITIAL_SUPPLY = 1000000000; // 1 Billion CELEBPLUS tokens
 
 
 contract('Airdrop', ([creator, addr1, addr2, addr3, addr4, addr5]) => {
