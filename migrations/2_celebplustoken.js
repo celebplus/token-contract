@@ -18,7 +18,7 @@ const CELEBPLUS_TOKEN_ADDRESS_MAINNET = '';
 
 // Rinkeby - Ethereum
 // @see https://ropsten.etherscan.io/token/0x
-const CELEBPLUS_TOKEN_ADDRESS_ROPSTEN = '0x2720503fb77BcDeA88Ef4A0D535565720742C2E7';
+const CELEBPLUS_TOKEN_ADDRESS_ROPSTEN = '';
 
 // Ropsten - Ethereum
 // @see https://rinkeby.etherscan.io/token/0x

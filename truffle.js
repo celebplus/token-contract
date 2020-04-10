@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const providerFactory4Ethereum = network => new HDWalletProvider(
-  process.env.MNEMONICS || '',                                  // Mnemonic of the deployer
+  process.env.PRIVATE_KEY || '',                                  // Mnemonic of the deployer
   `https://${network}.infura.io/v3/${process.env.INFURA_API_KEY}`  // Provider URL => web3.HttpProvider
 );
 
