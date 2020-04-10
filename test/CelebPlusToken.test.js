@@ -10,7 +10,7 @@ require('chai')
 
 contract('CelebPlusToken', ([creator, receiver, thirdParty]) => {
   const NAME = 'Celeb Plus';
-  const SYMBOL = 'CELEBPLUS';
+  const SYMBOL = 'CELEB';
   const DECIMALS = 18;
   const INITIAL_SUPPLY = 1000000000; // 1 Billion CELEBPLUS tokens
   const TOTAL_SUPPLY = new BigNumber(INITIAL_SUPPLY * 10 ** DECIMALS);

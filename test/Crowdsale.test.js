@@ -12,7 +12,7 @@ require('chai')
 
 contract('CelebPlusCrowdsale', ([creator, wallet, funder, thirdParty, thirdPartyAlt, address5, address6, address7, address8]) => {
   const NAME = 'Celeb Plus';
-  const SYMBOL = 'CELEBPLUS';
+  const SYMBOL = 'CELEB';
   const DECIMALS = 18;
   const INITIAL_SUPPLY = new BigNumber(1000000000); // 1.25 Billion CELEBPLUS tokens
 

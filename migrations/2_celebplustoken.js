@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const name = "Celeb Plus";
-const symbol = "CELEBPLUS";
+const symbol = "CELEB";
 const decimals = 18;
 const initialSupply = 1000000000;
 
@@ -81,7 +81,7 @@ module.exports = (deployer, network) => {
   /**
    * Token contract deploy.
    */
-  // TokenContractDeployer(deployer, network);
+  TokenContractDeployer(deployer, network);
 
   /**
    * Sale contract deploy.
@@ -91,5 +91,5 @@ module.exports = (deployer, network) => {
   /**
    * Sale contract deploy.
    */
-  AirdropContractDeployer(deployer, network);
+  // AirdropContractDeployer(deployer, network);
 }
